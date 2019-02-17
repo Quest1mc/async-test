@@ -7,28 +7,62 @@
 
 // - advanced own initiative give it a front end and design it and launch it
 
+// rein example 
 
-// Steps 1 Get value from user input field
+// const down = fetch('https://swapi.co/api/people/1')
 
-const userInput = document.getElementById('person').value;
-console.log(userInput);
-// seems there is a problem with consolelogging the value.
+// down
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+
+// async function getLuke(){
+//   const response = await fetch('https://swapi.co/api/people/1')
+//   const json = await response.json()
+// }
+
+// getLuke();
 
 
 
-// Steps 2 Fetch api with userInput
 
-const person = fetch(`https://swapi.co/api/people/${userInput}`);
+
+
+// // Steps 2 Fetch api with userInput
+
+// const person = fetch(`https://swapi.co/api/people/${userInput}`);
+
+// person
+//   .then(response => response.json())
+//   .then(json => console.log(json));
+
+
+// // use reponse to fetch homeworld 
+// problem below as the js is grabbing the value before it is being input
+async function getHomeplanet() {
+  const userInput = 'han';
+  // document.getElementById('person').value;
+
+  console.log(userInput);
+  const person = fetch(`https://swapi.co/api/people/?search=${userInput}`);
+  
 
 person
   .then(response => response.json())
-  .then(json => console.log(json));
+  .then( json=> {
+    const data= json;
+    const personObj = data.results;
+    console.log (personObj);
+    const homeworld = personObj[homeworld];
+    console.log(homeworld);
+  }
 
+  )
 
-// use reponse to fetch homeworld 
-async function getHomeplanet() {
-  const response = await fetch(`https://swapi.co/api/people/${userInput}.homeworld`);
-  const json = await response.json();
-}
+ //.then(json => console.log(json))
+ 
+
+//   const response = await fetch(`https://swapi.co/api/people/${userInput}.homeworld`);
+//   const json = await response.json();
+ }
 
 getHomeplanet();
