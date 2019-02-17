@@ -1,4 +1,5 @@
-// 1,write a script in swapi to get home planets 
+// 1,write a script in swapi to get home planets  
+//************************************************ */Done
 // fucntion called homeworld which if you request a person  it should make a request for that persons homeworld 
 // and post a picture of said homeworld.
 
@@ -39,7 +40,7 @@
 // // use reponse to fetch homeworld 
 // problem below as the js is grabbing the value before it is being input
 async function getHomeplanet() {
-  const userInput = 'han';
+  const userInput = 'leia';
   // document.getElementById('person').value;
 
   console.log(userInput);
@@ -52,7 +53,7 @@ person
     const data= json;
     const personObj = data.results;
     console.log (personObj);
-    const homeworld = personObj[homeworld];
+    const homeworld = personObj[0].homeworld;
     console.log(homeworld);
   }
 
