@@ -9,16 +9,37 @@
 </head>
 <body>
   
-<div>
-    <h1>UI for Star Wars API</h1>
-</div>
+    <div>
+        <h1>UI for Star Wars API</h1>
+    </div>
 
     <div>
        <form>
             <!-- Star Wars Person:<br>
             <input type="text" name="person" onchange="getHomeplanet()" id="person"><br> -->
-            Star Wars Person: <input type="text" name="person" onchange="getHomeplanet()"id="person" value=""><br>
+            Star Wars Person: <input type="text" name="person" id="person" value="han" onchange="homeWorld()"><br>
        </form>
+    </div>
+    <!-- ************ results displayed below *************** -->
+    <div class ="name">
+        <h1> Name of Person </h1>
+    </div>
+    <div class="planet"> 
+        <h1> Name of Home Planet </h1>
+    </div>
+
+    <div class= " imgplanet">
+        <img src="" alt="image of planet" />
+    </div>
+
+    <div class="vehicle-title">
+        <h1>
+            vehicles of <div class="current name"> name</div>
+        </h1> 
+    </div>
+    <div class="vehicles-list">
+        <li>vehicle 1</li>
+        
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
